@@ -42,6 +42,23 @@ namespace Masyvai
             Console.ReadKey(); 
         }
 
+        public void uzpildymas()
+        {
+            int[] skaiciai = new int[10];
+            Random rnd = new Random();
+
+            for (int i = 0; i < skaiciai.Length; i++)
+            {
+                skaiciai[i] = rnd.Next(1, 100);
+            }
+
+            foreach (var item in skaiciai)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadKey();
+        }
 
     }
     
@@ -51,7 +68,8 @@ namespace Masyvai
         static void Main(string[] args)
         {
             Masyvai M = new Masyvai();
-            M.MasyvasF();
+            //M.MasyvasF();
+            M.uzpildymas();
         }
     }
 }
