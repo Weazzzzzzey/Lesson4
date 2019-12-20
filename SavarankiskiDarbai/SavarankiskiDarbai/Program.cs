@@ -65,6 +65,20 @@ namespace SavarankiskiDarbai
             Console.ReadLine();
         }
 
+        public void Vertikalas()
+        {
+
+            string vertimas = "Olimpines zaidynes 2020, Tokijas";
+
+            for (int i = vertimas.Length-1; i >= 0; i--)
+            {
+                Console.WriteLine(vertimas[i]);
+            }
+            
+
+            Console.ReadKey();
+        }
+
 
 
     }
