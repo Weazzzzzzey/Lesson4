@@ -79,6 +79,30 @@ namespace SavarankiskiDarbai
             Console.ReadKey();
         }
 
+        public void neverEnd()
+        {
+
+            while (true)
+            {
+                
+                
+                Console.WriteLine("Iveskite skaiciu, kurio daugybos lentele bus iskaciuota.");
+                int sk = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i<11; i++)
+                {
+                    Console.WriteLine($"{sk}*{i}={i * sk}");
+                }
+                Console.WriteLine("Ar norite baigti? Rasykite: Ne");
+                if (string.Equals("Ne", Console.ReadLine()))
+                {
+                    Console.WriteLine("Programa baigta");
+                    break;
+                }
+                Console.WriteLine("Programa tesis toliau..");
+            }
+
+            Console.ReadKey();
+        }
 
 
     }
@@ -90,7 +114,8 @@ namespace SavarankiskiDarbai
         {
             NamuDarbai D1 = new NamuDarbai();
             //D1.TipoF();
-            D1.Lyginis();
+            //D1.Lyginis();
+            D1.neverEnd();
         }
     }
 }
