@@ -32,7 +32,40 @@ namespace SavarankiskiDarbai
             Console.WriteLine(ats);
             Console.ReadKey();
         }
-        
+
+        public void Lyginis()
+        {
+
+            int breikas = Convert.ToInt32(Console.ReadLine());
+            char symb = ',';
+
+            if (breikas > 0)
+            {
+
+                for (int i = 0; i <= breikas; i++)
+                {
+                    if(i%2 == 0)
+                    {
+                        if (i+1 == breikas) symb = '.';
+                        Console.Write($"{i}{symb}");
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i >= breikas; i--)
+                {
+                    if (i % 2 == 0)
+                    {
+                        if (i - 1 == breikas) symb = '.';
+                        Console.Write($"{i}{symb}",i);
+                    }
+                }
+            }
+            Console.ReadLine();
+        }
+
+
 
     }
 
@@ -42,7 +75,8 @@ namespace SavarankiskiDarbai
         static void Main(string[] args)
         {
             NamuDarbai D1 = new NamuDarbai();
-            D1.TipoF();
+            //D1.TipoF();
+            D1.Lyginis();
         }
     }
 }
