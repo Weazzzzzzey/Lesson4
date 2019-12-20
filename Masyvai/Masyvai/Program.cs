@@ -22,8 +22,13 @@ namespace Masyvai
                 "Sekmadienis"
             };
 
+            Console.WriteLine(SavaitesD[2]);
+
             SavaitesD[2] = "TRECIADIENIS";
-            
+
+            Console.WriteLine(SavaitesD[2]);
+
+            /*
             foreach(string diena in SavaitesD)
             {
                 Console.WriteLine(diena);
@@ -33,7 +38,8 @@ namespace Masyvai
             {
                 Console.WriteLine(SavaitesD[i]);
             }
-            Console.ReadKey();
+            */
+            Console.ReadKey(); 
         }
 
 
