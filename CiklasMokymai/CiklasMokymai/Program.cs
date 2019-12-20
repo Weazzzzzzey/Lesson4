@@ -8,27 +8,35 @@ namespace CiklasMokymai
 {
     public class DienosDarbas4
     {
-
         public void Ciklas()
         {
             for (int i = 10-1;i>=0;i--)
             {
                 Console.WriteLine("I reiksmes: {0}", i);
             }
-
             Console.ReadKey();
         }
 
+        public void CharCiklas()
+        {
+            for (char i = 'A'; i <= 'z'; i++)
+            {
+                Console.WriteLine("I reiksmes: {0}", i);
+            }
+            Console.ReadKey();
+        }
 
-    } 
+    }
+    
+
     
     class Program
     {
         static void Main(string[] args)
         {
             DienosDarbas4 D1 = new DienosDarbas4();
-            D1.Ciklas();
-        
+            //D1.Ciklas();
+            D1.CharCiklas();
         }
     }
 }
