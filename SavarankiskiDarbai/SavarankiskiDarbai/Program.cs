@@ -132,6 +132,28 @@ namespace SavarankiskiDarbai
                 }
             Console.ReadKey();
         }
+
+        public void piramide()
+        {
+
+            Console.WriteLine("Kokio dydzio bus piramide?: ");
+            int eilutes = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            string symb = "* ";
+            int consolesC = (Console.WindowWidth - symb.Length) / 2;
+            //Console.SetCursorPosition((Console.WindowWidth - symb.Length) / 2, Console.CursorTop);
+
+            for (int i = 0; i < eilutes; i++)
+            {
+                Thread.Sleep(100);
+                Console.SetCursorPosition(consolesC - i,i);
+                for (int j = 0; j < 1+i; j++)
+                {
+                    Console.Write(symb);
+                }
+            }
+            Console.ReadLine();
+        }
     }
 
     
@@ -142,7 +164,7 @@ namespace SavarankiskiDarbai
             NamuDarbai D1 = new NamuDarbai();
             //D1.TipoF();
             //D1.Lyginis();
-            D1.Baras();
+            D1.piramide();
         }
     }
 }
