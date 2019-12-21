@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace SavarankiskiDarbai
 {
@@ -85,7 +86,6 @@ namespace SavarankiskiDarbai
             while (true)
             {
                 
-                
                 Console.WriteLine("Iveskite skaiciu, kurio daugybos lentele bus iskaciuota.");
                 int sk = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i<11; i++)
@@ -104,7 +104,34 @@ namespace SavarankiskiDarbai
             Console.ReadKey();
         }
 
+        public void Baras()
+        {
+            int breikas = Convert.ToInt32(Console.ReadLine());
+            int ats = 0;
+            
+            
+                decimal BarP = 100m / breikas;
+                
+                decimal Procesas = BarP;
 
+                for (int i = 1; i <= breikas; i++)
+                {
+                    ats = ats + i;
+                    Thread.Sleep(10);
+                    
+                    Console.SetCursorPosition(0,0);
+                    Console.WriteLine("Apaskaiciuota suma: {0}, skaiciaus {1}", ats, breikas);
+                    Console.SetCursorPosition(0, 1);
+                    Console.WriteLine("{0}%", Math.Round(Procesas));
+                    Console.SetCursorPosition(5, 1);
+                    for (int j = 0; j <= Procesas; j++)
+                    {
+                        Console.Write("▐");
+                    }
+                    Procesas = Procesas + BarP;
+                }
+            Console.ReadKey();
+        }
     }
 
     
@@ -115,7 +142,7 @@ namespace SavarankiskiDarbai
             NamuDarbai D1 = new NamuDarbai();
             //D1.TipoF();
             //D1.Lyginis();
-            D1.neverEnd();
+            D1.Baras();
         }
     }
 }
