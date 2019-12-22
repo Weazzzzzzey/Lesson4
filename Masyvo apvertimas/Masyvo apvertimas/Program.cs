@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MasyvoApvertimas
 { 
-    public class ZodziaiSakinyje 
+    public class NamuDarbai34 
     {
-        
         public void Apvertimas()
         {
             string Sakinys = "Hello world my name is Central park";
@@ -20,18 +19,52 @@ namespace MasyvoApvertimas
             }
             Console.ReadLine();
         }
+        
+        public void Calck()
+        {
+            while (true)
+            {
+                Console.WriteLine("Iveskite du skaiciuss ir simboli");
+                Console.WriteLine("1 skaicius: ");
+                double Pirmas = double.Parse(Console.ReadLine());
+                Console.WriteLine("2 skaicius: ");
+                double Antras = double.Parse(Console.ReadLine());
+                Console.WriteLine("ir somboli: ");
+                string Symb = Console.ReadLine();
 
+                Console.WriteLine("Atsakymas: ");
+                
+                if (Symb == "+") 
+                    Console.WriteLine(Pirmas + Antras);
+                if (Symb == "-")
+                    Console.WriteLine(Pirmas - Antras);
+                if (Symb == "*")
+                    Console.WriteLine(Pirmas * Antras);
+                if (Symb == "/")
+                    Console.WriteLine(Pirmas / Antras);
 
-
+                Console.WriteLine("Noredami baigti, rasykite: Baigti");
+                if (string.Equals(Console.ReadLine(),"Baigti"))
+                {
+                    break;
+                }
+            }
+            
+        }
+    
+    
     }
+
+   
 
 
     class Program
     {
         static void Main(string[] args)
         {
-            ZodziaiSakinyje M = new ZodziaiSakinyje();
-            M.Apvertimas();
+            NamuDarbai34 M = new NamuDarbai34();
+            //M.Apvertimas();
+            M.Calck();
         }
     }
 }
