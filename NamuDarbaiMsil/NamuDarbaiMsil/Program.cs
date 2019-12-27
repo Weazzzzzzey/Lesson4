@@ -214,11 +214,7 @@ namespace NamuDarbaiMsil
 
             for (int i = 0; i < Vardai10.Length; i++)
             {
-                if (i == 5)
-                {
-                    skaitiklis--;
-                }
-                else if (i == 7)
+                if (i == 5 || i == 7)
                 {
                     skaitiklis--;
                 }
