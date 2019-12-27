@@ -230,6 +230,41 @@ namespace NamuDarbaiMsil
         }
     }
     
+
+    public class Papildomi
+    {
+        public void VirM()
+        {
+            string[] Zmones =
+            { 
+                "Beyonce(m)", 
+                "David Bowie(v)",
+                "Elvis Costello(v)",
+                "Madonna(m)",
+                "Elton John(v)",
+                "Charles Aznavour(v)"
+            };
+
+            Console.WriteLine("Vyrai:");
+            for (int i = 0; i < Zmones.Length; i++)
+            {
+                if (Zmones[i].Contains("(v)"))
+                {
+                    Console.WriteLine(Zmones[i]);
+                }
+            }
+            Console.WriteLine("Moterys:");
+            for (int i = 0; i < Zmones.Length; i++)
+            {
+                if (Zmones[i].Contains("(m)"))
+                {
+                    Console.WriteLine(Zmones[i]);
+                }
+            }
+
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -237,7 +272,8 @@ namespace NamuDarbaiMsil
 
             CiklaiMail Ciklas = new CiklaiMail();
             Masyvai Mas = new Masyvai();
-            Mas.VardaiArr();
+            Papildomi P = new Papildomi();
+            P.VirM();
             
             Console.ReadKey();
 
