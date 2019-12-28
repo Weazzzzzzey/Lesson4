@@ -263,6 +263,19 @@ namespace NamuDarbaiMsil
             }
 
         }
+
+        public void Futbolas()
+        {
+            string results = " Manchester United 1 Chelsea 0, Arsenal 1 Manchester United 1, Manchester United 3 Fulham 1, Liverpool 2 Manchester United 1, Swansea 2 Manchester United 4";
+            string[] Games = results.Split(',');
+            
+            foreach (var item in Games)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Games: {0}", Games.Length);
+        }
     }
 
     class Program
@@ -273,7 +286,7 @@ namespace NamuDarbaiMsil
             CiklaiMail Ciklas = new CiklaiMail();
             Masyvai Mas = new Masyvai();
             Papildomi P = new Papildomi();
-            P.VirM();
+            P.Futbolas();
             
             Console.ReadKey();
 
