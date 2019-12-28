@@ -269,10 +269,7 @@ namespace NamuDarbaiMsil
             string results = "Manchester United 1 Chelsea 0,Arsenal 1 Manchester United 1,Manchester United 3 Fulham 1,Liverpool 2 Manchester United 1,Swansea 2 Manchester United 4";
             string[] Games = results.Split(',');
             string[] Itemai = new string[5];
-            int LaimetiM = 0;
-            int Lost = 0;
-            int Goal = 0;
-            int GoalIn = 0;
+            int LaimetiM = 0, Lost = 0, Goal = 0, GoalIn = 0;
 
             for (int i = 0; i < Games.Length; i++)
             {
@@ -308,8 +305,6 @@ namespace NamuDarbaiMsil
                         Goal = Goal + Convert.ToInt32(Itemai[4]);
                         GoalIn = GoalIn + Convert.ToInt32(Itemai[1]);
                     } 
-                    
-                
             }
             Console.WriteLine("Games: {0}", Games.Length);
             Console.WriteLine("Games Won: {0}", LaimetiM);
@@ -317,7 +312,22 @@ namespace NamuDarbaiMsil
             Console.WriteLine("Goals: {0}:{1}", Goal,GoalIn);
         }
     }
+    
+    public class Matrica
+    {
+        public void Trys() 
+        {
+            int[,] mat = new int[,] { {1,2,3 }, {4,5,6}, {7,8,9} };
+            Console.WriteLine(mat[0,0] + mat[0,1] + mat[0, 2]
+                            + mat[1, 0] + mat[1, 1] + mat[1, 2]
+                            + mat[2, 0] + mat[2, 1] + mat[2, 2]);
+            int eilutes = mat[1, 0] + mat[1, 1] + mat[1, 2];
+            int stulpelis = mat[0, 2] + mat[1, 2] + mat[2, 2];
+            Console.WriteLine(eilutes);
+            Console.WriteLine(stulpelis);
 
+        }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -326,7 +336,8 @@ namespace NamuDarbaiMsil
             CiklaiMail Ciklas = new CiklaiMail();
             Masyvai Mas = new Masyvai();
             Papildomi P = new Papildomi();
-            P.Futbolas();
+            Matrica M = new Matrica();
+            M.Trys();
             
             Console.ReadKey();
 
