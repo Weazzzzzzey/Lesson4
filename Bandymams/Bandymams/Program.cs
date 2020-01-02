@@ -10,11 +10,15 @@ namespace Bandymams
     {
         public void Testavimas()
         {
-            bool hell = default;
-            byte a = 11, b = 22, c;
-            c = (byte)(a + b);
-            Console.WriteLine("Ats {0}",c);
-            Console.WriteLine(hell);
+            int x = 1;
+            float y = 1.1f;
+            short z = 1;
+
+            float  heloo = 3.14f;
+
+            char chrl = '9';
+            int dv = (int)chrl;
+            Console.WriteLine("{0}", dv);
         }
     }
     
