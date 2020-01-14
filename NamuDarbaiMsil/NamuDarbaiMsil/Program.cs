@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace NamuDarbaiMsil
 {
-    
+
     public class CiklaiMail
     {
 
@@ -15,7 +15,7 @@ namespace NamuDarbaiMsil
         {
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine("Deividas {0}", i+1);
+                Console.WriteLine("Deividas {0}", i + 1);
             }
         }
 
@@ -36,9 +36,9 @@ namespace NamuDarbaiMsil
 
             for (int i = Start; i < Pabaiga + 1; i++)
             {
-                Sum = Sum + i; 
+                Sum = Sum + i;
             }
-            Console.WriteLine("Skaiciaus {0} ir {1} suma yra: {2}",Start,Pabaiga,Sum);
+            Console.WriteLine("Skaiciaus {0} ir {1} suma yra: {2}", Start, Pabaiga, Sum);
         }
 
         public void Simtukas()
@@ -48,8 +48,8 @@ namespace NamuDarbaiMsil
 
             for (int i = 0; i < iki + 1; i++)
             {
-                if(i % 3 == 0)
-                Console.WriteLine("Skaiciai dalijasi is 3 be liekanos: {0}",i);
+                if (i % 3 == 0)
+                    Console.WriteLine("Skaiciai dalijasi is 3 be liekanos: {0}", i);
             }
         }
 
@@ -72,14 +72,14 @@ namespace NamuDarbaiMsil
         public void Dlentele()
         {
 
-            const int iki = 10+1;
+            const int iki = 10 + 1;
             Console.Clear();
 
             for (int i = 1; i < iki; i++)
             {
                 for (int j = 1; j < iki; j++)
                 {
-                    Console.Write("{0}*{1}={2} ", i,j,j*i);
+                    Console.Write("{0}*{1}={2} ", i, j, j * i);
                 }
                 Console.WriteLine();
             }
@@ -91,7 +91,7 @@ namespace NamuDarbaiMsil
 
         public void Isvedimas()
         {
-            int[] Arr = {1,2,3,4,5 };
+            int[] Arr = { 1, 2, 3, 4, 5 };
             int Sum = 0;
 
             for (int i = 0; i < Arr.Length; i++)
@@ -99,7 +99,7 @@ namespace NamuDarbaiMsil
                 Sum = Sum + Arr[i];
             }
 
-            Console.WriteLine("Suma: {0}",Sum);
+            Console.WriteLine("Suma: {0}", Sum);
 
             foreach (var item in Arr)
             {
@@ -110,7 +110,7 @@ namespace NamuDarbaiMsil
 
         public void Raidinis()
         {
-            string[] Arr = { "a", "b", "c","d","e"};
+            string[] Arr = { "a", "b", "c", "d", "e" };
 
 
             foreach (var item in Arr)
@@ -118,11 +118,11 @@ namespace NamuDarbaiMsil
                 Console.WriteLine(item);
             }
 
-            for (int i = Arr.Length-1; i >= 0; i--)
+            for (int i = Arr.Length - 1; i >= 0; i--)
             {
                 Console.WriteLine(Arr[i]);
             }
-        
+
         }
 
         public void Vardas()
@@ -134,7 +134,7 @@ namespace NamuDarbaiMsil
                 Console.WriteLine(Vardas[i]);
             }
 
-            for (int i = Vardas.Length-1; i >= 0; i--)
+            for (int i = Vardas.Length - 1; i >= 0; i--)
             {
                 Console.WriteLine(Vardas[i]);
             }
@@ -163,7 +163,7 @@ namespace NamuDarbaiMsil
             {
                 int Ivedimas = 0;
 
-                if(int.TryParse(Console.ReadLine(), out Ivedimas))
+                if (int.TryParse(Console.ReadLine(), out Ivedimas))
                 {
                     arr[i] = Ivedimas;
                 }
@@ -197,7 +197,7 @@ namespace NamuDarbaiMsil
 
             for (int i = arr2.Length; i < arr3.Length; i++)
             {
-                arr3[i] = arr2[i-arr2.Length];
+                arr3[i] = arr2[i - arr2.Length];
             }
 
             foreach (var item in arr3)
@@ -208,7 +208,7 @@ namespace NamuDarbaiMsil
 
         public void VardaiArr()
         {
-            string[] Vardai10 = {"Vardas1" , "Vardas2", "Vardas3", "Vardas4", "Vardas5", "Vardas6", "Vardas7", "Vardas8", "Vardas9", "Vardas10" };
+            string[] Vardai10 = { "Vardas1", "Vardas2", "Vardas3", "Vardas4", "Vardas5", "Vardas6", "Vardas7", "Vardas8", "Vardas9", "Vardas10" };
             string[] Vardai8 = new string[8];
             int skaitiklis = 0;
 
@@ -220,7 +220,7 @@ namespace NamuDarbaiMsil
                 }
 
                 Vardai8[i + skaitiklis] = Vardai10[i];
-                
+
             }
 
             foreach (var item in Vardai8)
@@ -229,15 +229,15 @@ namespace NamuDarbaiMsil
             }
         }
     }
-    
+
 
     public class Papildomi
     {
         public void VirM()
         {
             string[] Zmones =
-            { 
-                "Beyonce(m)", 
+            {
+                "Beyonce(m)",
                 "David Bowie(v)",
                 "Elvis Costello(v)",
                 "Madonna(m)",
@@ -264,61 +264,74 @@ namespace NamuDarbaiMsil
 
         }
 
+        
+        
+        
         public void Futbolas()
         {
             string results = "Manchester United 1 Chelsea 0,Arsenal 1 Manchester United 1,Manchester United 3 Fulham 1,Liverpool 2 Manchester United 1,Swansea 2 Manchester United 4";
             string[] Games = results.Split(',');
             string[] Itemai = new string[5];
-            int LaimetiM = 0, Lost = 0, Goal = 0, GoalIn = 0;
+            int LaimetiM = 0, Lost = 0, Goal = 0, GoalIn = 0 , tie = 0;
 
             for (int i = 0; i < Games.Length; i++)
             {
                 Itemai = Games[i].Split(' ');
-                
-                    if (Itemai[0].Contains("Manchester") && Itemai[1].Contains("United"))
+
+                if (Itemai[0].Contains("Manchester") && Itemai[1].Contains("United"))
+                {
+                    if (Convert.ToInt32(Itemai[2]) > Convert.ToInt32(Itemai[4]))
                     {
-                        if (Convert.ToInt32(Itemai[2]) > Convert.ToInt32(Itemai[4]))
-                        {
-                            LaimetiM++;
-                        }
-
-                        if (Convert.ToInt32(Itemai[2]) < Convert.ToInt32(Itemai[4]))
-                        {
-                            Lost++;
-                        }
-
-                        Goal = Goal + Convert.ToInt32(Itemai[2]);
-                        GoalIn = GoalIn + Convert.ToInt32(Itemai[4]);
+                        LaimetiM++;
                     }
                     else
+
+                    if (Convert.ToInt32(Itemai[2]) < Convert.ToInt32(Itemai[4]))
                     {
-                        if (Convert.ToInt32(Itemai[1]) < Convert.ToInt32(Itemai[4]))
-                        {
-                            LaimetiM++;
-                        }
+                        Lost++;
+                    }
 
-                        if (Convert.ToInt32(Itemai[1]) > Convert.ToInt32(Itemai[4]))
-                        {
-                            Lost++;
-                        }
+                    else
+                        tie++;
 
-                        Goal = Goal + Convert.ToInt32(Itemai[4]);
-                        GoalIn = GoalIn + Convert.ToInt32(Itemai[1]);
-                    } 
+
+                    Goal = Goal + Convert.ToInt32(Itemai[2]);
+                    GoalIn = GoalIn + Convert.ToInt32(Itemai[4]);
+
+                }
+                else
+                {
+                    if (Convert.ToInt32(Itemai[1]) < Convert.ToInt32(Itemai[4]))
+                    {
+                        LaimetiM++;
+                    }
+                    else
+
+                    if (Convert.ToInt32(Itemai[1]) > Convert.ToInt32(Itemai[4]))
+                    {
+                        Lost++;
+                    }
+                    else
+                        tie++;
+
+                    Goal = Goal + Convert.ToInt32(Itemai[4]);
+                    GoalIn = GoalIn + Convert.ToInt32(Itemai[1]);
+                }
             }
             Console.WriteLine("Games: {0}", Games.Length);
             Console.WriteLine("Games Won: {0}", LaimetiM);
             Console.WriteLine("Games Lost: {0}", Lost);
-            Console.WriteLine("Goals: {0}:{1}", Goal,GoalIn);
+            Console.WriteLine("Lygiosios: {0}", tie);
+            Console.WriteLine("Goals: {0}:{1}", Goal, GoalIn);
         }
     }
-    
+
     public class Matrica
     {
-        public void Trys() 
+        public void Trys()
         {
-            int[,] mat = new int[,] { {1,2,3 }, {4,5,6}, {7,8,9} };
-            Console.WriteLine(mat[0,0] + mat[0,1] + mat[0, 2]
+            int[,] mat = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            Console.WriteLine(mat[0, 0] + mat[0, 1] + mat[0, 2]
                             + mat[1, 0] + mat[1, 1] + mat[1, 2]
                             + mat[2, 0] + mat[2, 1] + mat[2, 2]);
             int eilutes = mat[1, 0] + mat[1, 1] + mat[1, 2];
@@ -337,8 +350,8 @@ namespace NamuDarbaiMsil
             Masyvai Mas = new Masyvai();
             Papildomi P = new Papildomi();
             Matrica M = new Matrica();
-            M.Trys();
-            
+            P.Futbolas();
+
             Console.ReadKey();
 
         }

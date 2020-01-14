@@ -45,9 +45,9 @@ namespace SavarankiskiDarbai
 
                 for (int i = 0; i <= breikas; i++)
                 {
-                    if(i%2 == 0)
+                    if (i % 2 == 0)
                     {
-                        if (i+1 == breikas) symb = '.';
+                        if (i + 1 == breikas) symb = '.';
                         Console.Write($"{i}{symb}");
                     }
                 }
@@ -59,7 +59,7 @@ namespace SavarankiskiDarbai
                     if (i % 2 == 0)
                     {
                         if (i - 1 == breikas) symb = '.';
-                        Console.Write($"{i}{symb}",i);
+                        Console.Write($"{i}{symb}", i);
                     }
                 }
             }
@@ -71,11 +71,11 @@ namespace SavarankiskiDarbai
 
             string vertimas = "Olimpines zaidynes 2020, Tokijas";
 
-            for (int i = vertimas.Length-1; i >= 0; i--)
+            for (int i = vertimas.Length - 1; i >= 0; i--)
             {
                 Console.WriteLine(vertimas[i]);
             }
-            
+
 
             Console.ReadKey();
         }
@@ -85,10 +85,10 @@ namespace SavarankiskiDarbai
 
             while (true)
             {
-                
+
                 Console.WriteLine("Iveskite skaiciu, kurio daugybos lentele bus iskaciuota.");
                 int sk = Convert.ToInt32(Console.ReadLine());
-                for (int i = 0; i<11; i++)
+                for (int i = 0; i < 11; i++)
                 {
                     Console.WriteLine($"{sk}*{i}={i * sk}");
                 }
@@ -106,30 +106,49 @@ namespace SavarankiskiDarbai
 
         public void Baras()
         {
-            int breikas = Convert.ToInt32(Console.ReadLine());
+            int IvestasSk = Convert.ToInt32(Console.ReadLine());
             int ats = 0;
-            
-            
-                decimal BarP = 100m / breikas;
-                
-                decimal Procesas = BarP;
+            Console.Clear();
 
-                for (int i = 1; i <= breikas; i++)
+            decimal BarP = 100m / IvestasSk;
+
+            decimal Procesas = BarP;
+
+            Console.WriteLine("                                                                                                      ╔════════╗   ");
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════╣ - ?  X ╠═╗");
+            Console.WriteLine("║                                                                                                     ╚════════╝ ║");
+            Console.WriteLine("║        ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐ ║");
+            Console.WriteLine("║        │                                                                                                     │ ║");
+            Console.WriteLine("║        └─────────────────────────────────────────────────────────────────────────────────────────────────────┘ ║");
+            Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+
+
+            for (int i = 1; i <= IvestasSk; i++)
+            {
+                ats = ats + i;
+                Thread.Sleep(100);
+
+                int poslinkis = 10;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.SetCursorPosition(10, 2);
+                Console.WriteLine("Apaskaiciuota suma: {0}, skaiciaus {1}", ats, IvestasSk);
+                Console.SetCursorPosition(3, 4);
+                Console.WriteLine("{0}%", Math.Round(Procesas));
+                Console.SetCursorPosition(10, 4);
+                Console.BackgroundColor = ConsoleColor.Green;
+                int pabaiga = 0;
+                for (int j = 0; j <= Procesas; j++)
                 {
-                    ats = ats + i;
-                    Thread.Sleep(10);
-                    
-                    Console.SetCursorPosition(0,0);
-                    Console.WriteLine("Apaskaiciuota suma: {0}, skaiciaus {1}", ats, breikas);
-                    Console.SetCursorPosition(0, 1);
-                    Console.WriteLine("{0}%", Math.Round(Procesas));
-                    Console.SetCursorPosition(5, 1);
-                    for (int j = 0; j <= Procesas; j++)
-                    {
-                        Console.Write("▐");
-                    }
-                    Procesas = Procesas + BarP;
+                    pabaiga = j;
+                    Console.Write("▐");
                 }
+                if(pabaiga == 99)
+                {
+                    Console.Write("▐");
+                }
+                Procesas = Procesas + BarP;
+            }
+            
             Console.ReadKey();
         }
 
@@ -146,8 +165,8 @@ namespace SavarankiskiDarbai
             for (int i = 0; i < eilutes; i++)
             {
                 Thread.Sleep(100);
-                Console.SetCursorPosition(consolesC - i,i);
-                for (int j = 0; j < 1+i; j++)
+                Console.SetCursorPosition(consolesC - i, i);
+                for (int j = 0; j < 1 + i; j++)
                 {
                     Console.Write(symb);
                 }
@@ -156,7 +175,7 @@ namespace SavarankiskiDarbai
         }
     }
 
-    
+
     class Program
     {
         static void Main(string[] args)
@@ -164,7 +183,7 @@ namespace SavarankiskiDarbai
             NamuDarbai D1 = new NamuDarbai();
             //D1.TipoF();
             //D1.Lyginis();
-            D1.piramide();
+            D1.Baras();
         }
     }
 }
